@@ -135,10 +135,12 @@
         <h2>pi-GAN extrapolates beyond the training distribution of camera poses</h2>
         <hr>
         <p>
-            Explicit camera control at inference enables rendering views completely absent
-            from the training distribution of camera poses. Although pi-GAN was only trained
-            on tightly cropped images, the radiance field extrapolates when we zoom out the
-            camera.
+            Because pi-GAN relies on an underlying 3D structural representaion and offers
+            explicit camera control, it more readily renders views absent
+            from the training distribution of camera poses, than previous methods
+            that rely on black-box represenations or projections.
+            pi-GAN was only trained on tightly cropped images, but the radiance field
+            extrapolates when we zoom out the camera.
         </p>
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
