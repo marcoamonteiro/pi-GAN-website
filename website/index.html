@@ -57,19 +57,19 @@
         </div>
         <hr>
         <p>
-            We have witnessed rapid progress on 3D-aware image synthesis, 
-            leveraging recent advances in generative visual models and neural 
-            rendering. Existing approaches however fall short in two ways: 
-            first, they may lack an underlying 3D representation or rely on 
-            view-inconsistent rendering, hence synthesizing images that are 
-            not multi-view consistent; second, they often depend upon 
-            representation network architectures that are not expressive 
-            enough, and their results thus lack in image quality. We propose 
-            a novel generative model, named Periodic Implicit Generative 
-            Adversarial Networks (\model or pi-GAN), for high-quality 3D-aware 
-            image synthesis. \model leverages neural representations with 
+            We have witnessed rapid progress on 3D-aware image synthesis,
+            leveraging recent advances in generative visual models and neural
+            rendering. Existing approaches however fall short in two ways:
+            first, they may lack an underlying 3D representation or rely on
+            view-inconsistent rendering, hence synthesizing images that are
+            not multi-view consistent; second, they often depend upon
+            representation network architectures that are not expressive
+            enough, and their results thus lack in image quality. We propose
+            a novel generative model, named Periodic Implicit Generative
+            Adversarial Networks (\model or pi-GAN), for high-quality 3D-aware
+            image synthesis. \model leverages neural representations with
             periodic activation functions and volumetric rendering to represent
-            scenes as view-consistent 3D representations with fine detail. 
+            scenes as view-consistent 3D representations with fine detail.
             The proposed approach obtains state-of-the-art results for 3D-aware
             image synthesis with multiple real and synthetic datasets.
         </p>
@@ -79,8 +79,8 @@
         <h2>Results</h2>
         <hr>
         <p>
-            We have witnessed rapid progress on 3D-aware image synthesis, 
-            leveraging recent advances in generative visual models and neural 
+            We have witnessed rapid progress on 3D-aware image synthesis,
+            leveraging recent advances in generative visual models and neural
             rendering.
         </p>
         <div class="row align-items-center">
@@ -97,9 +97,9 @@
         <hr>
         <p>
             pi-GAN relies on an underlying multi-view-consistent 3D representation. While the color output of pi-GAN at a given position depends on ray
-            direction, the density output is completely view independent. An 
-            interpretable 3D represenation can be extracted and visualized using 
-            marching cubes[cite] on the density output of the conditioned radiance 
+            direction, the density output is completely view independent. An
+            interpretable 3D represenation can be extracted and visualized using
+            marching cubes[cite] on the density output of the conditioned radiance
             field to produce a surface mesh.
 
         </p>
@@ -110,6 +110,36 @@
                 </video>
             </div>
         </div>
+
+        <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 padding-0 canvas-row">
+                            <h4>CelebA</h4>
+                            <model-viewer
+                                    alt="Ground Truth"
+                                    src="glbs/face.glb"
+                                    style="width: 100%; height: 200px; background-color: #404040"
+                                    exposure=".8"
+                                    camera-orbit="0deg 75deg 105%"
+                                    auto-rotate
+                                    camera-controls>
+                            </model-viewer>
+                        </div>
+                        <div class="col-md-4 padding-0 canvas-row">
+                            <h4>CARLA</h4>
+                            <model-viewer
+                                    alt="DeepSDF"
+                                    src="glbs/car.glb"
+                                    style="width: 100%; height: 200px; background-color: #404040"
+                                    exposure=".8"
+                                    auto-rotate
+                                    camera-controls>
+                            </model-viewer>
+                            <!--                            poster="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5e7e6db2d75a9b467eee4111_legomesh_cover.png"-->
+                        </div>
+                    </div>
+          </div>
+
     </div>
 
     <div class="section">
@@ -118,7 +148,7 @@
         <p>
             Using a trained pi-GAN generator we can perform single-view reconstruction
             and novel-view synthesis using the procedure described by Karras et al.~\cite{Karras2020stylegan2}.
-            We freeze the parameters for our implicit representaion and seek the frequencies and 
+            We freeze the parameters for our implicit representaion and seek the frequencies and
             phase shifts for each MLP layer which produce a radiance field that, when rendered,
             best matches the target image.
         </p>
@@ -156,7 +186,7 @@
 
 
 
-    
+
 
     <div class="section">
         <h2>Paper</h2>
