@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
           content="pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis">
-    <meta name="author" content="Eric R. Chan,
+    <meta name="author" content="Eric Chan,
                                  Marco Monteiro,
                                  Other Authors">
 
@@ -33,10 +33,11 @@
     <h2>for 3D-Aware Image Synthesis</h2>
     <hr>
     <p class="authors">
-        <a href="http://www.jmartel.net"> Eric R. Chan*</a>,
+        <a href=""> Eric Chan*</a>,
         <a href="">Marco Monteiro*</a>,</br>
-        <a href="https://stanford.edu/~gordonwz/"> Gordon Wetzstein</a>
-        <a href="">Other Authors</a>,</br>
+        <a href="">Petr Kellnhofer</a>,
+        <a href="">Jiajun Wu</a>,
+        <a href="https://stanford.edu/~gordonwz/"> Gordon Wetzstein</a>,</br>
     </p>
     <div class="btn-group" role="group" aria-label="Top menu">
         <a class="btn btn-primary"
@@ -66,8 +67,8 @@
             representation network architectures that are not expressive
             enough, and their results thus lack in image quality. We propose
             a novel generative model, named Periodic Implicit Generative
-            Adversarial Networks (\model or pi-GAN), for high-quality 3D-aware
-            image synthesis. \model leverages neural representations with
+            Adversarial Networks (π-GAN or pi-GAN), for high-quality 3D-aware
+            image synthesis. π-GAN leverages neural representations with
             periodic activation functions and volumetric rendering to represent
             scenes as view-consistent 3D representations with fine detail.
             The proposed approach obtains state-of-the-art results for 3D-aware
@@ -79,9 +80,9 @@
         <h2>Results</h2>
         <hr>
         <p>
-            We have witnessed rapid progress on 3D-aware image synthesis,
-            leveraging recent advances in generative visual models and neural
-            rendering.
+            π-GAN leverages recent advances in generative visual models
+            and neural rendering to produce high-quality, multi-view-consistent
+            images.
         </p>
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
@@ -96,11 +97,10 @@
         <h2>Interpreting the 3D Representation</h2>
         <hr>
         <p>
-            pi-GAN relies on an underlying multi-view-consistent 3D representation. While the color output of pi-GAN at a given position depends on ray
-            direction, the density output is completely view independent. An
-            interpretable 3D represenation can be extracted and visualized using
-            marching cubes[cite] on the density output of the conditioned radiance
-            field to produce a surface mesh.
+            pi-GAN relies on an underlying multi-view-consistent 3D representation.
+            We can interpret the 3D represenation as a mesh through marching
+            cubes on the density output of the conditioned radiance
+            field.
 
         <!-- </p>
         <div class="row align-items-center">
@@ -158,11 +158,10 @@
         <h2>Inverse Rendering and Novel View Synthesis</h2>
         <hr>
         <p>
-            Using a trained pi-GAN generator we can perform single-view reconstruction
-            and novel-view synthesis using the procedure described by Karras et al.~\cite{Karras2020stylegan2}.
-            We freeze the parameters for our implicit representaion and seek the frequencies and
-            phase shifts for each MLP layer which produce a radiance field that, when rendered,
-            best matches the target image.
+            Using a trained π-GAN generator, we can perform single-view reconstruction
+            and novel-view synthesis. After freezing the parameters of our implicit
+            representation, we optimize for the conditioning parameters that produce a
+            radiance field which, when rendered, best matches the target image.
         </p>
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
@@ -175,15 +174,17 @@
     </div>
 
     <div class="section">
-        <h2>pi-GAN Extrapolates to Unseen Camera Poses</h2>
+        <h2>π-GAN Extrapolates to Unseen Camera Poses</h2>
         <hr>
         <p>
-            Because pi-GAN relies on an underlying 3D structural representaion and offers
-            explicit camera control, it more readily renders views absent
-            from the training distribution of camera poses, than previous methods
-            that rely on black-box represenations or projections.
-            pi-GAN was only trained on tightly cropped images, but the radiance field
-            extrapolates when we zoom out the camera.
+            The underling 3D structural representation makes π-GAN more capable
+            of rendering views absent from the training distribution of camera
+            poses than previous methods that lacked 3D representations or relied
+            on black-box neural rendering. π-GAN offers explicit control
+            over position, rotation, focal length, and other camera parameters.
+            Despite training only on closely cropped images of Cats, π-GAN
+            can render images at much higher or much lower magnification.
+
         </p>
         <div class="row align-items-center">
             <div class="col justify-content-center text-center">
@@ -218,7 +219,17 @@
         <h2>Bibtex</h2>
         <hr>
         <div class="bibtexsection">
-            TODO after uploaded to arxiv
+            @inproceedings{chanmonteiro2020pi-GAN,
+                author = {Chan, Eric
+                          and Monteiro, Marco
+                          and Kellnhofer, Petr
+                          and Wu, Jiajun
+                          and Wetzstein, Gordon},
+                title = {pi-GAN: Periodic Implicit Generative Adversarial
+                  Networks for 3D-Aware Image Synthesis},
+                booktitle = {arXiv},
+                year={2020}
+            }
         </div>
     </div>
 
