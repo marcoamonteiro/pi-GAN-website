@@ -7,10 +7,14 @@ body {
   overflow-x: hidden;  /*Prevent scroll on narrow devices */
   padding-top: 30px;
     text-align: justify;
+  /* font-family: 'Open Sans', sans-serif; */
 }
 footer {
   padding: 10px 0;
 }
+/* title {
+  font-family: 'Open Sans', sans-serif;
+} */
 .authors {
   font-size: 20px;
 }
