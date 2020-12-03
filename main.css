@@ -1,13 +1,6 @@
-/*
- * Style tweaks
- * --------------------------------------------------
- */
- /* title {
-   font-family: 'Open Sans', sans-serif;
- } */
 html,
 body {
-  overflow-x: hidden;  /*Prevent scroll on narrow devices */
+  overflow-x: hidden;
   padding-top: 30px;
     text-align: justify;
 }
@@ -23,6 +16,7 @@ footer {
 }
 p {
   font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 li {
@@ -32,6 +26,7 @@ li {
 h2 {
     text-align: center;
     align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .jumbotron{
